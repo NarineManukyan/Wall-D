@@ -1,9 +1,7 @@
-!pip install picamera
 import picamera
 
-if __name__ == '__main__':
+def take_picture(file="cameraOutput.png"):
     camera = picamera.PiCamera()
-
     camera.start_preview()
-    camera.capture('cameraOutput.png', format='png')
+    camera.capture(file, format='png')
     camera.stop_preview()
