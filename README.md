@@ -1,7 +1,7 @@
 # Wall-D
 The robot
 
-Please add your groups branch title below next to group:
+Please add your group's branch title below next to group:
 
 Image Recognition: Finn + Will + Neil + Alex
 
