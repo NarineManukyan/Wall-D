@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[ ]:
 
 
 #!/usr/bin/env python
@@ -12,6 +12,8 @@
 
 from gopigo import *
 import sys
+import time
+import easygopigo3 as easy
 import random
 #Move the GoPiGo forward
 def fwd(dist=0): #distance is in cm
@@ -160,13 +162,13 @@ def turn_left_wait_for_completion(degrees):
 #Move robot through the room
 def move_through_room():
     distance_to_stop = 20 #So if robot is 20cm away from object it stops
-    
+    walld_distance_sensor = gpg.init_distance_sensor()
     
     fwd()                 #otherwise move forward
     while True:
-        currentDistance = us_dist(15)
+        currentDistance = int(walld_distance_sensor.read_cm())
         if currentDistance < distance_to_stop:
-            time.sleep(.1)
+            time.sleep(.5)
             meet_object()
 
 
