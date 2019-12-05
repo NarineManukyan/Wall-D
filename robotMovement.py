@@ -160,6 +160,7 @@ def turn_left_wait_for_completion(degrees):
 
 #Move robot through the room
 def move_through_room():
+    gpg = easy.EasyGoPiGo3()
     distance_to_stop = 20 #So if robot is 20cm away from object it stops
     walld_distance_sensor = gpg.init_distance_sensor()
     
