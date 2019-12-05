@@ -156,7 +156,6 @@ def turn_left_wait_for_completion(degrees):
 		pass
 
 
-# In[ ]:
 
 
 #Move robot through the room
@@ -166,13 +165,12 @@ def move_through_room():
     
     fwd()                 #otherwise move forward
     while True:
-        currentDistance = int(walld_distance_sensor.read_cm())
+        currentDistance = int(walld_distance_sensor.read())
         if currentDistance < distance_to_stop:
             time.sleep(.5)
             meet_object()
 
 
-# In[ ]:
 
 
 
