@@ -6,8 +6,14 @@ def take_picture(file="cameraOutput.png"):
         Notes: Default file is 'cameraOutput.png'
         Params:
             file = location to save the image
+        Returns:
+            Bool if picture was captured
     """
-    camera = picamera.PiCamera()
-    camera.start_preview()
-    camera.capture(file, format='png')
-    camera.stop_preview()
+    try:
+        camera = picamera.PiCamera()
+        camera.start_preview()
+        camera.capture(file, format='png')
+        camera.stop_preview()
+        return True
+    except:
+        return False
