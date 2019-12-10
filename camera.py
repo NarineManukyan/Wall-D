@@ -1,6 +1,6 @@
 import picamera
 
-camera = None
+camera = picamera.PiCamera()
 
 
 def take_picture(file="cameraOutput.png"):
@@ -13,8 +13,6 @@ def take_picture(file="cameraOutput.png"):
             Bool if picture was captured
     """
     try:
-        if camera is None:
-            camera = picamera.PiCamera()
         camera.start_preview()
         camera.capture(file, format='png')
         camera.stop_preview()
