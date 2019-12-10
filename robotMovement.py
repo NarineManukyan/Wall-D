@@ -1,12 +1,13 @@
 import time
 import easygopigo3 as easy
+import random
 
 
 def move():
     gpg = easy.EasyGoPiGo3()
     walld_distance_sensor = gpg.init_distance_sensor()
     
-    if randint(0,1) == 0: 
+    if random.randint(0,1) == 0: 
         gpg.right()
     else:
         gpg.left()
